@@ -1,10 +1,6 @@
-# 99Tech Code Challenge #1 #
-
-Note that if you fork this repository, your responses may be publicly linked to this repo.  
-Please submit your application along with the solutions attached or linked.   
-
-It is important that you minimally attempt the problems, even if you do not arrive at a working solution.
-
-## Submission ##
-You can either provide a link to an online repository, attach the solution in your application, or whichever method you prefer.
-We're cool as long as we can view your solution without any pain.
+- Problem 1 and 4: Reference in problem 4 dir. Run `yarn test` to run testcases. Read .readme for more details.
+- Problem 2: Just static html and javascript files. Run `index.html` should be ok
+- Problem 5:
+  - Run `docker compose up` in root folder first to start Postgres DB
+  - Run `yarn` to install dependencies. Then run `yarn start:api` to start API server. Run `yarn start:ui` to start UI.
+- Problem 6: Reference to diagram image and readme.md
