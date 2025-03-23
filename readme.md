@@ -3,4 +3,5 @@
 - Problem 5:
   - Run `docker compose up` in root folder first to start Postgres DB
   - Run `yarn` to install dependencies. Then run `yarn start:api` to start API server. Run `yarn start:ui` to start UI.
+  - Can import attached Postman collection for testing API.
 - Problem 6: Reference to diagram image and readme.md
