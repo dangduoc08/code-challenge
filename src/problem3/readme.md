@@ -1,0 +1,9 @@
+- `WalletBalance` interface is missed blockchain type.
+- Line 39 using undeclared variable `lhsPriority`.
+- Sort method at line 45 missing condition where leftPriority === rightPriority
+- Function `getPriority` at line 19 receiving parameter as `any` type.
+- Function `getPriority` change from switch case to map, to improve performance.
+- Redundant `map` function at line 56, format amount can be invoked inside render function.
+- Shouldn't use spread `{...rest}` props, since hard to manage props, can lead to potential bug if pass invalid prop and if props too large can impact performance.
+- Can remove useMemo, since filter and sort are not computationally expensive.
+- If possible avoid using key by array index.
