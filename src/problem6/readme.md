@@ -1,0 +1,18 @@
+- To create score board application we will need:
+  - Frontend - mobile app or website...
+  - Backend - HTTP and websocket server
+  - Cache database - Redist which support sorted sets data
+  - Main database - Posgres, Mongo, MySQL...
+- On frontend loading it's need establishing to Websocket to perform realtime display scores.
+- Get top 10 list API:
+  - Will request through HTTP by getList API
+  - Inititally, it's will read first 10 scores from high to low in `score` collection.
+  - If no data returned from Redis, its will read from main databased then upsert from main database to Redis
+- Update score
+  - Request through HTTP
+  - Perform update require authentication, client need sending credentials in header or cookies.
+  - If request valid then we will proceed to increase score by user ID. We will use Atomic operation `ZINCRBY` to prevent race conditions.
+  - Asynchronously, atomic update on main database, if not success then rollback from both Redis and main DB, then get the newest top 10 lists and finally, push new list through Websocket for client update realtime.
+- Issue:
+  - Websocket is stateful server, may have trouble with many users, consider using Redis pub/sub + websocket for better scale.
+  - Can use sync job to sync data from Redis to main DB
